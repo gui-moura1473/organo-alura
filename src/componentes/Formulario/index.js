@@ -3,6 +3,7 @@ import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
+import { v4 as uuidv4 } from 'uuid'
 
 const Formulario = (props) => {
 
@@ -10,6 +11,7 @@ const Formulario = (props) => {
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
+    const id = uuidv4();
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
@@ -17,8 +19,10 @@ const Formulario = (props) => {
             nome,
             cargo,
             imagem,
-            time
+            time,
+            id
         })
+        
 
         setNome('');
         setCargo('');
