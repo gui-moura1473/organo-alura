@@ -47,30 +47,46 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log (colaborador)
+    console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
   }
 
   function deletarColaborador(id) {
-    setColaboradores(colaboradores.filter( colaborador => colaborador.id != id))
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id != id))
   }
 
   function mudarCorDoTime(cor, id) {
     setTimes(times.map(time => {
-      if(time.id === id) {
+      if (time.id === id) {
         time.cor = cor;
       }
       return time;
     }))
   }
 
+  function cadastrarTime(novoTime) {
+    setTimes([...times, { ...novoTime }])
+  }
+
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} times={times.map(time => time.nome)} />
+      <Formulario
+        cadastrarTime={cadastrarTime}
+        aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
+        times={times.map(time => time.nome)}
+      />
 
       {times.map((time, indice) =>
         <Times
+          aoFavoritar={resolverFavorito}
           mudarCor={mudarCorDoTime}
           key={indice}
           time={time}
