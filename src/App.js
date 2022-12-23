@@ -3,6 +3,7 @@ import Banner from './componentes/Banner'
 import Formulario from './componentes/Formulario';
 import Times from './componentes/Times';
 import { v4 as uuidv4 } from 'uuid';
+import Rodape from './componentes/Rodape';
 
 function App() {
 
@@ -93,6 +94,8 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
           aoDeletar={deletarColaborador}
         />)}
+
+        <Rodape />
 
     </div>
   );

@@ -1,6 +1,7 @@
 .colaborador {
     width: 280px;
     position: relative;
+    margin-top: 0;
 }
 
 .colaborador .cabecalho {
@@ -19,15 +20,20 @@
     background-color: #ffffff;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0 0 10px 10px;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-bottom: 40px;
 }
 
 .colaborador .rodape h4 {
     color: #6278f7;
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 22px;
-    
+    margin-bottom: .5rem;
+}
+
+.colaborador .rodape h5 {
+    font-size: .9rem;
+    margin-block: 0 .5rem;
 }
 
 .deletar {
@@ -46,7 +52,7 @@
 }
 
 .favoritar {
-    margin-top: 20px;
+    margin-top: 10px;
     color: #ff0000;
     cursor: pointer;
 }

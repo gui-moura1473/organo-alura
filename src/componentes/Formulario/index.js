@@ -75,7 +75,7 @@ const Formulario = (props) => {
                 setNomeTime('');
                 setCorTime('#000000');
             }}>
-                <h2>Preecha os dados para criar o card do colaborador</h2>
+                <h2>Preecha os dados para criar o novo time</h2>
                 <Campo
                     obrigatorio="required"
                     label="Nome"
